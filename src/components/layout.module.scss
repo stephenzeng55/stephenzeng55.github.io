@@ -1,11 +1,9 @@
 .link {
-  color: white;
   box-shadow: none;
 }
 
 .nav-link {
   @extend .link;
-  margin-left: 1rem;
 }
 
 .children {

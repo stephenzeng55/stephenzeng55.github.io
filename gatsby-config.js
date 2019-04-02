@@ -12,6 +12,22 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-material-ui`,
+      options: {
+        theme: {
+          palette: {
+            primary: {
+              main: `#16b3b3`
+            },
+            secondary: {
+              main: `#95b2b8`,
+              contrastText: `#023426`
+            },
+          },
+        },
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
