@@ -8,13 +8,15 @@
 }
 
 .home-icon-link {
-  @extend .nav-link;
-  height: 50;
   font-size: 0;
   padding: 5px;
   margin-right: 20px;
   img {
     margin-bottom: 0;
+  }
+  a {
+    @extend .link;
+    height: 50px;
   }
 }
 .children {
