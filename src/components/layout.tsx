@@ -10,7 +10,7 @@ import IconButton from "@material-ui/core/IconButton"
 import Button from "@material-ui/core/Button"
 
 const NavLink = props => (
-  <Button color="inherit">
+  <Button color="inherit" size="medium" >
     <Link className={styles.navLink} to={props.to}>
       {props.children}
     </Link>
@@ -23,15 +23,14 @@ export default ({ children }) => (
     </Helmet>
     <AppBar position="static" color="secondary">
       <Toolbar>
-        <IconButton>
-          <Link className={styles.navLink} to="/">
+        <IconButton className={styles.homeIconLink}>
+          <Link to="/" className={styles.link}>
             <img
               src={logo}
               width="50"
               height="50"
-              style={{ marginBottom: 0 }}
               alt="Stephen Zeng Logo"
-            />
+            ></img>
           </Link>
         </IconButton>
         <NavLink to="/about/">About</NavLink>

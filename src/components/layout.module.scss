@@ -4,8 +4,18 @@
 
 .nav-link {
   @extend .link;
+  font-family: "Merriweather Sans", sans-serif;
 }
 
+.home-icon-link {
+  @extend .nav-link;
+  font-size: 0;
+  padding: 5px;
+  margin-right: 20px;
+  img {
+    margin-bottom: 0;
+  }
+}
 .children {
   margin-top: 1rem;
   text-align: center;

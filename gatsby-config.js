@@ -24,6 +24,9 @@ module.exports = {
               contrastText: `#023426`
             },
           },
+          typography: {
+            useNextVariants: true
+          }
         },
       },
     },
