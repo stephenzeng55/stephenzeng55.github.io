@@ -1,24 +1,26 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Img from "gatsby-image"
+import BackgroundImage from "gatsby-background-image"
+import Typography from "@material-ui/core/Typography"
 
 import Layout from "../components/layout"
-import { isMobile } from "react-device-detect"
+import styles from "./index.module.scss"
 
 export default ({ data }) => (
   <Layout>
-    <h2>Welcome to the portfolio of</h2>
-    <h1>Stephen J Zeng</h1>
-    <p>
-      This is the initial version of my page, look forward to a more exciting
-      page in the near future!
-    </p>
-    <div style={{ maxWidth: isMobile ? `100vw` : `50vw`, margin: `auto` }}>
-      <Img
-        fluid={data.file.childImageSharp.fluid}
-        alt="Stephen Zeng with Subarus"
-      />
-    </div>
+    <BackgroundImage
+      classId="index"
+      className={styles.gatsbyBackgroundImageIndex}
+      fluid={data.file.childImageSharp.fluid}
+      alt="Stephen Zeng with Subarus"
+    >
+      <Typography variant="h2" color="secondary" gutterBottom style={{paddingTop: 20, paddingBottom: 150}}>
+        Welcome to the portfolio of
+      </Typography>
+      <Typography variant="h1" color="secondary" gutterBottom>
+        Stephen J Zeng
+      </Typography>
+    </BackgroundImage>
   </Layout>
 )
 
@@ -26,8 +28,8 @@ export const query = graphql`
   query {
     file(relativePath: { eq: "me-and-subarus.jpg" }) {
       childImageSharp {
-        fluid(quality: 100) {
-          ...GatsbyImageSharpFluid
+        fluid(maxWidth: 10000, quality: 100) {
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
