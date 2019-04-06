@@ -14,12 +14,38 @@ export default ({ data }) => (
       fluid={data.file.childImageSharp.fluid}
       alt="Stephen Zeng with Subarus"
     >
-      <Typography variant="h2" color="secondary" gutterBottom style={{paddingTop: 20, paddingBottom: 150}}>
-        Welcome to the portfolio of
-      </Typography>
-      <Typography variant="h1" color="secondary" gutterBottom>
-        Stephen J Zeng
-      </Typography>
+      <div style={{ height: `95vh`, display: `flex`, flexDirection: `column` }}>
+        <Typography
+          variant="h2"
+          color="secondary"
+          gutterBottom
+          style={{ paddingTop: 20 }}
+        >
+          Hi there! My friends know me as
+        </Typography>
+        <span style={{ marginTop: `auto`, marginBottom: `2em` }}>
+          <Typography
+            variant="h1"
+            color="primary"
+            gutterBottom
+            style={{
+              textShadow: `2px 1px grey`,
+            }}
+          >
+            Stephen J Zeng
+          </Typography>
+          <Typography
+            variant="h4"
+            color="textPrimary"
+            gutterBottom
+            style={{
+              textShadow: `1px 1px grey`,
+            }}
+          >
+            Minus the "J" part
+          </Typography>
+        </span>
+      </div>
     </BackgroundImage>
   </Layout>
 )

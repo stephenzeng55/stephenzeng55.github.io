@@ -17,15 +17,20 @@ module.exports = {
         theme: {
           palette: {
             primary: {
-              main: `#16b3b3`
+              main: `#16b3b3`,
+              contrastText: `#003636`
             },
             secondary: {
               main: `#95b2b8`,
               contrastText: `#023426`
             },
+            text: {
+              primary: `#375c85`
+            }
           },
           typography: {
-            useNextVariants: true
+            useNextVariants: true,
+            fontFamily: "Merriweather"
           }
         },
       },
