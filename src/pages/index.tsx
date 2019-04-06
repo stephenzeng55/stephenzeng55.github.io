@@ -19,11 +19,11 @@ export default ({ data }) => (
           variant="h2"
           color="secondary"
           gutterBottom
-          style={{ paddingTop: 20 }}
+          style={{ marginTop: `1em` }}
         >
           Hi there! My friends know me as
         </Typography>
-        <span style={{ marginTop: `auto`, marginBottom: `2em` }}>
+        <span style={{ marginTop: `auto`, marginBottom: `5em` }}>
           <Typography
             variant="h1"
             color="primary"
