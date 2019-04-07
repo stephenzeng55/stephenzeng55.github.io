@@ -4,13 +4,14 @@ import BackgroundImage from "gatsby-background-image"
 import Typography from "@material-ui/core/Typography"
 
 import Layout from "../components/layout"
-import styles from "./index.module.scss"
+import indexStyles from "./index.module.scss"
+import pageStyles from "./page.module.scss"
 
 export default ({ data }) => (
   <Layout>
     <BackgroundImage
       classId="index"
-      className={styles.gatsbyBackgroundImageIndex}
+      className={indexStyles.gatsbyBackgroundImageIndex}
       fluid={data.file.childImageSharp.fluid}
       alt="Stephen Zeng with Subarus"
     >
@@ -19,7 +20,7 @@ export default ({ data }) => (
           variant="h2"
           color="secondary"
           gutterBottom
-          style={{ marginTop: `1em` }}
+          className = {pageStyles.topTypography}
         >
           Hi there! My friends know me as
         </Typography>
@@ -42,7 +43,7 @@ export default ({ data }) => (
               textShadow: `1px 1px grey`,
             }}
           >
-            Minus the "J" part
+            (Minus the "J" part)
           </Typography>
         </span>
       </div>

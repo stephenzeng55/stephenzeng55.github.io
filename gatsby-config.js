@@ -22,10 +22,11 @@ module.exports = {
             },
             secondary: {
               main: `#95b2b8`,
-              contrastText: `#023426`
+              contrastText: `#003636`
             },
             text: {
-              primary: `#375c85`
+              primary: `#003636`,
+              secondary: `#375c85`
             }
           },
           typography: {
