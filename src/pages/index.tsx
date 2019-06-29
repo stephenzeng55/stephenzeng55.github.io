@@ -15,12 +15,19 @@ export default ({ data }) => (
       fluid={data.file.childImageSharp.fluid}
       alt="Stephen Zeng with Subarus"
     >
-      <div style={{ height: `95vh`, display: `flex`, flexDirection: `column` }}>
+      <div
+        style={{
+          height: `95vh`,
+          display: `flex`,
+          flexDirection: `column`,
+          background: `rgba(0, 0, 0, 0.6)`,
+        }}
+      >
         <Typography
           variant="h2"
           color="secondary"
           gutterBottom
-          className = {pageStyles.topTypography}
+          className={pageStyles.topTypography}
         >
           Hi there! My friends know me as
         </Typography>
