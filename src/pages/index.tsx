@@ -26,18 +26,32 @@ export default ({ data }) => (
         <Typography
           variant="h2"
           color="secondary"
-          gutterBottom
           className={pageStyles.topTypography}
+          style={{
+            textShadow: `1px 1px grey`,
+          }}
         >
-          Hi there! My friends know me as
+          Hello there!
         </Typography>
-        <span style={{ marginTop: `auto`, marginBottom: `5em` }}>
+        <Typography
+          display="inline"
+          variant="h2"
+          color="secondary"
+          style={{
+            textShadow: `1px 1px black`,
+          }}
+          gutterBottom
+        >
+          My friends know me as
+        </Typography>
+        <span style={{ marginTop: `auto`, marginBottom: `6em` }}>
           <Typography
             variant="h1"
             color="primary"
             gutterBottom
             style={{
-              textShadow: `2px 1px grey`,
+              textShadow: `1px 1px black`,
+              lineHeight: `100px`,
             }}
           >
             Stephen J Zeng
@@ -47,7 +61,7 @@ export default ({ data }) => (
             color="textPrimary"
             gutterBottom
             style={{
-              textShadow: `1px 1px grey`,
+              textShadow: `1px 1px black`,
             }}
           >
             (Minus the "J" part)

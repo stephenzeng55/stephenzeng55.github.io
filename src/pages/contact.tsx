@@ -10,7 +10,7 @@ import SvgIcon from "@material-ui/core/SvgIcon"
 export default () => (
   <Layout>
     <Typography
-      variant="h3"
+      variant="h4"
       color="textPrimary"
       aria-label="Email"
       className={pageStyles.topTypography}

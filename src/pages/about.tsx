@@ -6,16 +6,13 @@ import pageStyles from "./page.module.scss"
 export default () => (
   <Layout>
     <Typography
-      variant="h1"
+      variant="h2"
       color="textPrimary"
       className={pageStyles.topTypography}
     >
       Who am I?
     </Typography>
-    <Typography
-      variant="headline"
-      color="textPrimary"
-    >
+    <Typography variant="h5" color="textPrimary">
       Beantown born and raised.
     </Typography>
   </Layout>

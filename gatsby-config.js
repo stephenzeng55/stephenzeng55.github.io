@@ -1,4 +1,4 @@
-const path = require(`path`)
+const path = require(`path`);
 
 module.exports = {
   plugins: [
@@ -14,26 +14,6 @@ module.exports = {
     {
       resolve: `gatsby-plugin-material-ui`,
       options: {
-        theme: {
-          palette: {
-            primary: {
-              main: `#16b3b3`,
-              contrastText: `#003636`
-            },
-            secondary: {
-              main: `#95b2b8`,
-              contrastText: `#003636`
-            },
-            text: {
-              primary: `#003636`,
-              secondary: `#375c85`
-            }
-          },
-          typography: {
-            useNextVariants: true,
-            fontFamily: "Merriweather"
-          }
-        },
       },
     },
     {
