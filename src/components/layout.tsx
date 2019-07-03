@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import styles from "./layout.module.scss"
 import logo from "../images/icon.png"
@@ -10,7 +9,7 @@ import IconButton from "@material-ui/core/IconButton"
 import Button from "@material-ui/core/Button"
 import { ThemeProvider } from "@material-ui/styles"
 import theme from "../theme"
-import { FormattedMessage, injectIntl } from "gatsby-plugin-intl"
+import { Link, FormattedMessage, injectIntl } from "gatsby-plugin-intl"
 import Language from "./language"
 
 const NavLink = props => (
