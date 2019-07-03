@@ -6,21 +6,22 @@ import pageStyles from "./page.module.scss"
 import Email from "@material-ui/icons/Email"
 import Button from "@material-ui/core/Button"
 import SvgIcon from "@material-ui/core/SvgIcon"
+import { FormattedMessage } from "gatsby-plugin-intl"
 
 export default () => (
   <Layout>
     <Typography
       variant="h4"
       color="textPrimary"
-      aria-label="Email"
       className={pageStyles.topTypography}
       gutterBottom
     >
-      Reach out to me at:
+      <FormattedMessage id="reach_out" />
     </Typography>
     <Button
       variant="contained"
       color="inherit"
+      aria-label="Email"
       href="mailto:stephen.zeng55@gmail.com"
       size="large"
       className={pageStyles.linkButton}

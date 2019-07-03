@@ -10,18 +10,20 @@ import IconButton from "@material-ui/core/IconButton"
 import Button from "@material-ui/core/Button"
 import { ThemeProvider } from "@material-ui/styles"
 import theme from "../theme"
+import { FormattedMessage, injectIntl } from "gatsby-plugin-intl"
+import Language from "./language"
 
 const NavLink = props => (
   <Button color="inherit" size="medium">
     <Link className={styles.navLink} to={props.to}>
-      {props.children}
+      <FormattedMessage id={props.id} />
     </Link>
   </Button>
 )
-export default ({ children }) => (
+const Layout = ({ children, intl }) => (
   <div>
     <Helmet>
-      <title>Stephen J Zeng Portfolio</title>
+      <title>{intl.formatMessage({ id: "title" })}</title>
     </Helmet>
     <ThemeProvider theme={theme}>
       <AppBar position="static" color="secondary">
@@ -31,13 +33,12 @@ export default ({ children }) => (
               <img src={logo} width="50" height="50" alt="Stephen Zeng Logo" />
             </Link>
           </IconButton>
-          <div style={{ marginLeft: `auto` }}>
-            <NavLink aria-label="About" to="/about/">
-              About
-            </NavLink>
-            <NavLink aria-label="Contact" to="/contact/">
-              Contact
-            </NavLink>
+          <div style={{ marginLeft: `auto`, marginRight: 0 }}>
+            <NavLink aria-label="About" to="/about/" id="about" />
+            <NavLink aria-label="Contact" to="/contact/" id="contact" />
+            <div style={{ float: `right` }}>
+              <Language />
+            </div>
           </div>
         </Toolbar>
       </AppBar>
@@ -45,3 +46,5 @@ export default ({ children }) => (
     </ThemeProvider>
   </div>
 )
+
+export default injectIntl(Layout)

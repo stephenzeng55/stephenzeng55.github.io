@@ -6,6 +6,7 @@ import Typography from "@material-ui/core/Typography"
 import Layout from "../components/layout"
 import indexStyles from "./index.module.scss"
 import pageStyles from "./page.module.scss"
+import { FormattedMessage } from "gatsby-plugin-intl"
 
 export default ({ data }) => (
   <Layout>
@@ -31,7 +32,7 @@ export default ({ data }) => (
             textShadow: `1px 1px grey`,
           }}
         >
-          Hello there!
+          <FormattedMessage id="hello" />
         </Typography>
         <Typography
           display="inline"
@@ -42,7 +43,7 @@ export default ({ data }) => (
           }}
           gutterBottom
         >
-          My friends know me as
+          <FormattedMessage id="hello_2" />
         </Typography>
         <span style={{ marginTop: `auto`, marginBottom: `6em` }}>
           <Typography
@@ -54,17 +55,19 @@ export default ({ data }) => (
               lineHeight: `100px`,
             }}
           >
-            Stephen J Zeng
+            <FormattedMessage id="name" />
           </Typography>
           <Typography
+            display='inline'
             variant="h4"
             color="textPrimary"
             gutterBottom
             style={{
-              textShadow: `1px 1px black`,
+              textShadow: `1px 1px 1px 1px white`,
+              background: `rgba(255, 255, 255, 0.2)`,
             }}
           >
-            (Minus the "J" part)
+            <FormattedMessage id="name_2" />
           </Typography>
         </span>
       </div>

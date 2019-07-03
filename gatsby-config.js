@@ -39,5 +39,17 @@ module.exports = {
         icon: "src/images/icon.png", // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: `gatsby-plugin-intl`,
+      options: {
+        // language JSON resource path
+        path: `${__dirname}/src/intl`,
+        // supported language
+        languages: [`en`, `ja`, `zh-hk`], //`zh-tw`, `zh-cn`],
+        // language file path
+        defaultLanguage: `en`,
+        redirect: true
+      }
+    }
   ],
 }
