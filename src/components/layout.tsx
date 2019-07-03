@@ -32,12 +32,10 @@ const Layout = ({ children, intl }) => (
               <img src={logo} width="50" height="50" alt="Stephen Zeng Logo" />
             </Link>
           </IconButton>
-          <div style={{ marginLeft: `auto`, marginRight: 0 }}>
-            <NavLink aria-label="About" to="/about/" id="about" />
-            <NavLink aria-label="Contact" to="/contact/" id="contact" />
-            <div style={{ float: `right` }}>
-              <Language />
-            </div>
+          <NavLink aria-label="About" to="/about/" id="about" />
+          <NavLink aria-label="Contact" to="/contact/" id="contact" />
+          <div style={{ marginLeft: `auto`, float: `right` }}>
+            <Language />
           </div>
         </Toolbar>
       </AppBar>
