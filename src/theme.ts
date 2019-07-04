@@ -16,7 +16,7 @@ const theme = createMuiTheme({
         }
       },
       typography: {
-        fontFamily: "Merriweather"
+        fontFamily: "Merriweather,Meiryo"
       }
   });
 
