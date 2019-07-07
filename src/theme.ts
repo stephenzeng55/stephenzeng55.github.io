@@ -16,7 +16,7 @@ const theme = createMuiTheme({
         }
       },
       typography: {
-        fontFamily: "Merriweather,Meiryo"
+        fontFamily: '"Merriweather", "Sawarabi Mincho", "Noto Sans JP", "Noto Sans HK", "Noto Sans TC", "Noto Sans SC", sans-serif'
       }
   });
 

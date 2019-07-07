@@ -20,7 +20,7 @@ const NavLink = props => (
   </Button>
 )
 const Layout = ({ children, intl }) => (
-  <div>
+  <div lang={intl.locale}>
     <Helmet>
       <title>{intl.formatMessage({ id: "title" })}</title>
     </Helmet>

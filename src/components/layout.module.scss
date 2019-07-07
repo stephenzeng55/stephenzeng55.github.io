@@ -4,7 +4,26 @@
 
 .nav-link {
   @extend .link;
-  font-family: "Merriweather Sans", sans-serif;
+  font-family: "Merriweather Sans", "Noto Sans JP", "Noto Sans HK",
+    "Noto Sans TC", "Noto Sans SC", sans-serif;
+    :lang(zh-hk),
+    :lang(ja)
+    {
+      font-size: large;
+      font-weight: bold;
+    }
+    :lang(ja)
+    {
+      font-family: "Noto Sans JP"
+    }
+}
+
+:lang(ja) {
+  font-family: "Sawarabi Mincho", sans-serif;
+}
+
+:lang(zh-hk) {
+  font-family: "Noto Sans HK", sans-serif;
 }
 
 .home-icon-link {

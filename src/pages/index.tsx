@@ -29,7 +29,7 @@ export default ({ data }) => (
           color="secondary"
           className={pageStyles.topTypography}
           style={{
-            textShadow: `1px 1px grey`,
+            textShadow: `1px 1px black`,
           }}
         >
           <FormattedMessage id="hello" />
