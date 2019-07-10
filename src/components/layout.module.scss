@@ -6,20 +6,25 @@
   @extend .link;
   font-family: "Merriweather Sans", "Noto Sans JP", "Noto Sans HK",
     "Noto Sans TC", "Noto Sans SC", sans-serif;
-    :lang(zh-hk),
-    :lang(ja)
-    {
-      font-size: large;
-      font-weight: bold;
-    }
-    :lang(ja)
-    {
-      font-family: "Noto Sans JP"
-    }
+  :lang(zh-hk),
+  :lang(ja) {
+    font-size: large;
+    font-weight: bold;
+  }
+  :lang(ja) {
+    font-family: "Noto Sans JP", "ヒラギノ角ゴ ProN",
+      "Hiragino Kaku Gothic ProN", "游ゴシック", "游ゴシック体", YuGothic,
+      "Yu Gothic", "メイリオ", Meiryo, "ＭＳ ゴシック", "MS Gothic",
+      HiraKakuProN-W3, "TakaoExゴシック", TakaoExGothic, "MotoyaLCedar",
+      "Droid Sans Japanese", sans-serif;
+  }
 }
 
 :lang(ja) {
-  font-family: "Sawarabi Mincho", sans-serif;
+  font-family: "Sawarabi Mincho", "ヒラギノ明朝 ProN", "Hiragino Mincho ProN",
+    "游明朝", "游明朝体", YuMincho, "Yu Mincho", "ＭＳ 明朝", "MS Mincho",
+    HiraMinProN-W3, "TakaoEx明朝", TakaoExMincho, "MotoyaLCedar",
+    "Droid Sans Japanese", serif;
 }
 
 :lang(zh-hk) {

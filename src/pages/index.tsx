@@ -12,18 +12,10 @@ export default ({ data }) => (
   <Layout>
     <BackgroundImage
       classId="index"
-      className={indexStyles.gatsbyBackgroundImageIndex}
       fluid={data.file.childImageSharp.fluid}
       alt="Stephen Zeng with Subarus"
     >
-      <div
-        style={{
-          height: `95vh`,
-          display: `flex`,
-          flexDirection: `column`,
-          background: `rgba(0, 0, 0, 0.6)`,
-        }}
-      >
+      <div className={indexStyles.indexContents}>
         <Typography
           variant="h2"
           color="secondary"
@@ -38,27 +30,25 @@ export default ({ data }) => (
           display="inline"
           variant="h2"
           color="secondary"
-          style={{
-            textShadow: `1px 1px black`,
-          }}
+          className={indexStyles.shadowedText}
           gutterBottom
         >
           <FormattedMessage id="hello_2" />
         </Typography>
-        <span style={{ marginTop: `auto`, marginBottom: `6em` }}>
+        <span style={{ marginTop: `auto`, marginBottom: `auto` }}>
           <Typography
             variant="h1"
             color="primary"
             gutterBottom
+            className={indexStyles.shadowedText}
             style={{
-              textShadow: `1px 1px black`,
-              lineHeight: `100px`,
+              lineHeight: `125%`,
             }}
           >
             <FormattedMessage id="name" />
           </Typography>
           <Typography
-            display='inline'
+            display="inline"
             variant="h4"
             color="textPrimary"
             gutterBottom
