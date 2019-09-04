@@ -15,7 +15,6 @@ languageName["zh-cn"] = "cn"
 
 
 function handleChange(event: React.ChangeEvent<{ name?: string; value: unknown }>) {
-  console.log(event);
   changeLocale(event.target.value);
 }
 
