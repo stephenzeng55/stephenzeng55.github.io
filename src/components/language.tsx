@@ -1,6 +1,9 @@
 import React from "react"
 import { IntlContextConsumer, changeLocale } from "gatsby-plugin-intl"
 import ReactCountryFlag from "react-country-flag"
+import Select from "@material-ui/core/Select"
+import MenuItem from "@material-ui/core/MenuItem"
+import Input from "@material-ui/core/Input"
 
 const languageName = {
   en: "us",
