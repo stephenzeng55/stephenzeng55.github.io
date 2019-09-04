@@ -3,40 +3,46 @@ import { IntlContextConsumer, changeLocale } from "gatsby-plugin-intl"
 import ReactCountryFlag from "react-country-flag"
 import Select from "@material-ui/core/Select"
 import MenuItem from "@material-ui/core/MenuItem"
-import Input from "@material-ui/core/Input"
+import FormControl from "@material-ui/core/FormControl"
 
 const languageName = {
   en: "us",
   ja: "jp",
 }
+
 languageName["zh-hk"] = "hk"
 languageName["zh-tw"] = "tw"
 languageName["zh-cn"] = "cn"
 
+
+function handleChange(event: React.ChangeEvent<{ name?: string; value: unknown }>) {
+  console.log(event);
+  changeLocale(event.target.value);
+}
+
 const Language = () => {
   return (
-    <div>
-      <IntlContextConsumer>
-        {/* <Select> */}
-        {({ languages, language: currentLocale }) =>
-          languages.map(language => (
-            // <MenuItem>
-              <a key={language} onClick={() => changeLocale(language)} style={{ margin: 2 }}>
-                <ReactCountryFlag
-                  code={languageName[language]}
-                  styleProps={{
-                    width: "30px",
-                    height: "30px",
-                  }}
-                  svg
-                />
-              </a>
-            // </MenuItem>
-          ))
-        }
-        {/* </Select> */}
-      </IntlContextConsumer>
-    </div>
+    <IntlContextConsumer>
+      {({ languages, language: currentLocale }) =>
+        <FormControl variant="outlined">
+          <Select value={currentLocale} onChange={handleChange} disableUnderline>
+            {
+              languages.map(language => (
+                <MenuItem key={language} value={language}>
+                  <ReactCountryFlag
+                    code={languageName[language]}
+                    styleProps={{
+                      width: "30px",
+                      height: "30px",
+                    }}
+                    svg
+                  />
+                </MenuItem>
+              ))}
+          </Select>
+        </FormControl>
+      }
+    </IntlContextConsumer>
   )
 }
 
