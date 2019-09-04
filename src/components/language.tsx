@@ -3,7 +3,6 @@ import { IntlContextConsumer, changeLocale } from "gatsby-plugin-intl"
 import ReactCountryFlag from "react-country-flag"
 import Select from "@material-ui/core/Select"
 import MenuItem from "@material-ui/core/MenuItem"
-import FormControl from "@material-ui/core/FormControl"
 
 const languageName = {
   en: "us",
@@ -24,23 +23,21 @@ const Language = () => {
   return (
     <IntlContextConsumer>
       {({ languages, language: currentLocale }) =>
-        <FormControl variant="outlined">
-          <Select value={currentLocale} onChange={handleChange} disableUnderline>
-            {
-              languages.map(language => (
-                <MenuItem key={language} value={language}>
-                  <ReactCountryFlag
-                    code={languageName[language]}
-                    styleProps={{
-                      width: "30px",
-                      height: "30px",
-                    }}
-                    svg
-                  />
-                </MenuItem>
-              ))}
-          </Select>
-        </FormControl>
+        <Select value={currentLocale} onChange={handleChange} disableUnderline>
+          {
+            languages.map(language => (
+              <MenuItem key={language} value={language}>
+                <ReactCountryFlag
+                  code={languageName[language]}
+                  styleProps={{
+                    width: "30px",
+                    height: "30px",
+                  }}
+                  svg
+                />
+              </MenuItem>
+            ))}
+        </Select>
       }
     </IntlContextConsumer>
   )
