@@ -17,20 +17,24 @@ const Language = () => {
   return (
     <div>
       <IntlContextConsumer>
+        {/* <Select> */}
         {({ languages, language: currentLocale }) =>
           languages.map(language => (
-            <a key={language} onClick={() => changeLocale(language)} style={{ margin: 2 }}>
-              <ReactCountryFlag
-                code={languageName[language]}
-                styleProps={{
-                  width: "30px",
-                  height: "30px",
-                }}
-                svg
-              />
-            </a>
+            // <MenuItem>
+              <a key={language} onClick={() => changeLocale(language)} style={{ margin: 2 }}>
+                <ReactCountryFlag
+                  code={languageName[language]}
+                  styleProps={{
+                    width: "30px",
+                    height: "30px",
+                  }}
+                  svg
+                />
+              </a>
+            // </MenuItem>
           ))
         }
+        {/* </Select> */}
       </IntlContextConsumer>
     </div>
   )
