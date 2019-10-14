@@ -1,5 +1,10 @@
-.gatsby-background-image-index/*(:before, :after)*/ {
-    // background-repeat: repeat-y;
-    background-position: center 35%;
-    background-size: cover;
-  }
+.index-contents {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.shadowed-text {
+  text-shadow: 1px 1px black;
+}

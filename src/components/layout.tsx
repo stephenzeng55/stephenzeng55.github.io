@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import styles from "./layout.module.scss"
 import logo from "../images/icon.png"
@@ -8,35 +7,41 @@ import AppBar from "@material-ui/core/AppBar"
 import Toolbar from "@material-ui/core/Toolbar"
 import IconButton from "@material-ui/core/IconButton"
 import Button from "@material-ui/core/Button"
+import { ThemeProvider } from "@material-ui/styles"
+import theme from "../theme"
+import { Link, FormattedMessage, injectIntl } from "gatsby-plugin-intl"
+import Language from "./language"
 
 const NavLink = props => (
-  <Button color="inherit" size="medium" >
+  <Button color="inherit" size="medium">
     <Link className={styles.navLink} to={props.to}>
-      {props.children}
+      <FormattedMessage id={props.id} />
     </Link>
   </Button>
 )
-export default ({ children }) => (
-  <div>
+const Layout = ({ children, intl }) => (
+  <div lang={intl.locale}>
     <Helmet>
-      <title>Stephen J Zeng Portfolio</title>
+      <title>{intl.formatMessage({ id: "title" })}</title>
     </Helmet>
-    <AppBar position="static" color="secondary">
-      <Toolbar>
-        <IconButton className={styles.homeIconLink}>
-          <Link to="/" className={styles.link}>
-            <img
-              src={logo}
-              width="50"
-              height="50"
-              alt="Stephen Zeng Logo"
-            ></img>
-          </Link>
-        </IconButton>
-        <NavLink to="/about/">About</NavLink>
-        <NavLink to="/contact/">Contact</NavLink>
-      </Toolbar>
-    </AppBar>
-    <div className={styles.children}>{children}</div>
+    <ThemeProvider theme={theme}>
+      <AppBar position="static" color="secondary">
+        <Toolbar>
+          <IconButton className={styles.homeIconLink} aria-label="Home">
+            <Link to="/" className={styles.link}>
+              <img src={logo} width="50" height="50" alt="Stephen Zeng Logo" />
+            </Link>
+          </IconButton>
+          <NavLink aria-label="About" to="/about/" id="about" />
+          <NavLink aria-label="Contact" to="/contact/" id="contact" />
+          <div style={{ marginLeft: `auto`, float: `right` }}>
+            <Language />
+          </div>
+        </Toolbar>
+      </AppBar>
+      <div className={styles.children}>{children}</div>
+    </ThemeProvider>
   </div>
 )
+
+export default injectIntl(Layout)
