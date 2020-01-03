@@ -27,10 +27,11 @@ const Language = () => {
             languages.map(language => (
               <MenuItem key={language} value={language}>
                 <ReactCountryFlag
-                  code={languageName[language]}
-                  styleProps={{
-                    width: "30px",
-                    height: "30px",
+                  countryCode={languageName[language]}
+                  style={{
+                    width: "40px",
+                    height: "40px",
+                    margin: 0
                   }}
                   svg
                 />
