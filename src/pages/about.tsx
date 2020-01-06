@@ -1,55 +1,87 @@
 import React from "react"
 import Layout from "../components/layout"
 import Typography from "@material-ui/core/Typography"
-import pageStyles from "./page.module.scss"
-import { FormattedMessage } from "gatsby-plugin-intl"
+import { useIntl, FormattedMessage } from "gatsby-plugin-intl"
+import { AppBar, Tabs, Tab, Box } from "@material-ui/core"
 
-export default () => (
-  <Layout>
+function a11yProps(index: any) {
+  return {
+    id: `full-width-tab-${index}`,
+    "aria-controls": `full-width-tabpanel-${index}`,
+  }
+}
+
+interface TabPanelProps {
+  children?: React.ReactNode
+  dir?: string
+  index: any
+  value: any
+}
+
+function TabPanel(props: TabPanelProps) {
+  const { children, value, index, ...other } = props
+
+  return (
     <Typography
-      variant="h2"
-      color="textPrimary"
-      gutterBottom
-      className={pageStyles.topTypography}
+      component="div"
+      role="tabpanel"
+      hidden={value !== index}
+      id={`full-width-tabpanel-${index}`}
+      aria-labelledby={`full-width-tab-${index}`}
+      {...other}
     >
-      <FormattedMessage id="who_am_i" />
+      {value === index && <Box p={3}>{children}</Box>}
     </Typography>
-    <Typography
-      variant="body1"
-      color="textPrimary"
-      style={{ width: `75%`, margin: `0 auto` }}
-    >
-      <FormattedMessage id="who_am_i_blurb" />
-    </Typography>
-    <Typography
-      variant="h2"
-      color="textPrimary"
-      gutterBottom
-      className={pageStyles.topTypography}
-    >
-      <FormattedMessage id="what_do_i_do" />
-    </Typography>
-    <Typography
-      variant="body1"
-      color="textPrimary"
-      style={{ width: `75%`, margin: `0 auto` }}
-    >
-      <FormattedMessage id="what_do_i_do_blurb" />
-    </Typography>
-    <Typography
-      variant="h2"
-      color="textPrimary"
-      gutterBottom
-      className={pageStyles.topTypography}
-    >
-      <FormattedMessage id="what_do_i_do_fun" />
-    </Typography>
-    <Typography
-      variant="body1"
-      color="textPrimary"
-      style={{ width: `75%`, margin: `0 auto` }}
-    >
-      <FormattedMessage id="what_do_i_do_fun_blurb" />
-    </Typography>
-  </Layout>
-)
+  )
+}
+
+export default () => {
+  const intl = useIntl()
+
+  const [value, setValue] = React.useState('one')
+
+  const handleChange = (event: React.ChangeEvent<{}>, newValue: string) => {
+    setValue(newValue)
+  }
+
+  return (
+    <Layout>
+      <AppBar position="static">
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          variant="fullWidth"
+          aria-label="about page tabs"
+        >
+          <Tab
+            value="one"
+            label={intl.formatMessage({ id: "who_am_i" })}
+            wrapped
+            {...a11yProps("one")}
+          />
+          <Tab
+            value="two"
+            label={intl.formatMessage({ id: "what_do_i_do" })}
+            wrapped
+            {...a11yProps("two")}
+          />
+          <Tab
+            value="three"
+            label={intl.formatMessage({ id: "what_do_i_do_fun" })}
+            wrapped
+            {...a11yProps("three")}
+          />
+        </Tabs>
+      </AppBar>
+      <TabPanel value={value} index="one">
+        <FormattedMessage id="who_am_i_blurb" />
+      </TabPanel>
+      <TabPanel value={value} index="two">
+        <FormattedMessage id="what_do_i_do_blurb" />
+      </TabPanel>
+      <TabPanel value={value} index="three">
+        <FormattedMessage id="what_do_i_do_fun_blurb" />
+      </TabPanel>
+    </Layout>
+  )
+}
