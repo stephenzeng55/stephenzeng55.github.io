@@ -38,7 +38,7 @@ function TabPanel(props: TabPanelProps) {
 export default () => {
   const intl = useIntl()
 
-  const [value, setValue] = React.useState('one')
+  const [value, setValue] = React.useState("one")
 
   const handleChange = (event: React.ChangeEvent<{}>, newValue: string) => {
     setValue(newValue)
@@ -74,13 +74,19 @@ export default () => {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index="one">
-        <FormattedMessage id="who_am_i_blurb" />
+        <Typography variant="h4" color="textPrimary">
+          <FormattedMessage id="who_am_i_blurb" />
+        </Typography>
       </TabPanel>
       <TabPanel value={value} index="two">
-        <FormattedMessage id="what_do_i_do_blurb" />
+        <Typography variant="h4" color="textPrimary">
+          <FormattedMessage id="what_do_i_do_blurb" />
+        </Typography>
       </TabPanel>
       <TabPanel value={value} index="three">
-        <FormattedMessage id="what_do_i_do_fun_blurb" />
+        <Typography variant="h4" color="textPrimary">
+          <FormattedMessage id="what_do_i_do_fun_blurb" />
+        </Typography>
       </TabPanel>
     </Layout>
   )
