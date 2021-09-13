@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import Typography from "@material-ui/core/Typography"
-import { useIntl, FormattedMessage } from "gatsby-plugin-intl"
+import { useIntl, FormattedMessage } from "gatsby-plugin-react-intl"
 import { AppBar, Tabs, Tab, Box } from "@material-ui/core"
 
 function a11yProps(index: any) {

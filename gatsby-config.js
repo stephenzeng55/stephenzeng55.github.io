@@ -23,6 +23,7 @@ module.exports = {
         path: path.join(__dirname, `src`, `images`),
       },
     },
+    `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
@@ -40,7 +41,7 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-intl`,
+      resolve: `gatsby-plugin-react-intl`,
       options: {
         // language JSON resource path
         path: `${__dirname}/src/intl`,

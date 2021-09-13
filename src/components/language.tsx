@@ -1,5 +1,5 @@
 import React from "react"
-import { IntlContextConsumer, changeLocale } from "gatsby-plugin-intl"
+import { IntlContextConsumer, changeLocale } from "gatsby-plugin-react-intl"
 import ReactCountryFlag from "react-country-flag"
 import Select from "@material-ui/core/Select"
 import MenuItem from "@material-ui/core/MenuItem"
