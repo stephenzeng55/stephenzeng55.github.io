@@ -1,15 +1,14 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import { getImage, GatsbyImage } from "gatsby-plugin-image"
+import { getImage} from "gatsby-plugin-image"
 
 import { BgImage, convertToBgImage } from "gbimage-bridge"
-import BackgroundImage from "gatsby-background-image"
-import Typography from "@material-ui/core/Typography"
 
 import Layout from "../components/layout"
 import * as indexStyles from "./index.module.scss"
 import * as pageStyles from "./page.module.scss"
 import { FormattedMessage } from "gatsby-plugin-react-intl"
+import {Typography} from "@mui/material";
 
 const Index = () => {
   const { placeholderImage } = useStaticQuery(
@@ -25,9 +24,6 @@ const Index = () => {
   );
 
   const image = getImage(placeholderImage)
-
-  // Use like this:
-  const bgImage = convertToBgImage(image)
 
   return (
     <Layout>

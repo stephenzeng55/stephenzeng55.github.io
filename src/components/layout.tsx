@@ -3,14 +3,11 @@ import React from "react"
 import * as styles from "./layout.module.scss"
 import logo from "../images/icon.png"
 import { Helmet } from "react-helmet"
-import AppBar from "@material-ui/core/AppBar"
-import Toolbar from "@material-ui/core/Toolbar"
-import IconButton from "@material-ui/core/IconButton"
-import Button from "@material-ui/core/Button"
-import { ThemeProvider } from "@material-ui/styles"
 import theme from "../theme"
 import { Link, FormattedMessage, injectIntl } from "gatsby-plugin-react-intl"
 import Language from "./language"
+import {AppBar, Button, IconButton, Toolbar} from "@mui/material";
+import {ThemeProvider} from "@mui/styles";
 
 const NavLink = props => (
   <Button color="inherit" size="medium">

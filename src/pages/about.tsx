@@ -1,8 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
-import Typography from "@material-ui/core/Typography"
 import { useIntl, FormattedMessage } from "gatsby-plugin-react-intl"
-import { AppBar, Tabs, Tab, Box } from "@material-ui/core"
+import {AppBar, Box, Tab, Tabs, Typography} from "@mui/material";
 
 function a11yProps(index: any) {
   return {
@@ -45,49 +44,49 @@ export default () => {
   }
 
   return (
-    <Layout>
-      <AppBar position="static">
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          variant="fullWidth"
-          aria-label="about page tabs"
-        >
-          <Tab
-            value="one"
-            label={intl.formatMessage({ id: "who_am_i" })}
-            wrapped
-            {...a11yProps("one")}
-          />
-          <Tab
-            value="two"
-            label={intl.formatMessage({ id: "what_do_i_do" })}
-            wrapped
-            {...a11yProps("two")}
-          />
-          <Tab
-            value="three"
-            label={intl.formatMessage({ id: "what_do_i_do_fun" })}
-            wrapped
-            {...a11yProps("three")}
-          />
-        </Tabs>
-      </AppBar>
-      <TabPanel value={value} index="one">
-        <Typography variant="h4" color="textPrimary">
-          <FormattedMessage id="who_am_i_blurb" />
-        </Typography>
-      </TabPanel>
-      <TabPanel value={value} index="two">
-        <Typography variant="h4" color="textPrimary">
-          <FormattedMessage id="what_do_i_do_blurb" />
-        </Typography>
-      </TabPanel>
-      <TabPanel value={value} index="three">
-        <Typography variant="h4" color="textPrimary">
-          <FormattedMessage id="what_do_i_do_fun_blurb" />
-        </Typography>
-      </TabPanel>
-    </Layout>
-  )
+      <Layout>
+        <AppBar position="static">
+          <Tabs
+              value={value}
+              onChange={handleChange}
+              variant="fullWidth"
+              aria-label="about page tabs"
+          >
+            <Tab
+                value="one"
+                label={intl.formatMessage({id: "who_am_i"})}
+                wrapped
+                {...a11yProps("one")}
+            />
+            <Tab
+                value="two"
+                label={intl.formatMessage({id: "what_do_i_do"})}
+                wrapped
+                {...a11yProps("two")}
+            />
+            <Tab
+                value="three"
+                label={intl.formatMessage({id: "what_do_i_do_fun"})}
+                wrapped
+                {...a11yProps("three")}
+            />
+          </Tabs>
+        </AppBar>
+        <TabPanel value={value} index="one">
+          <Typography variant="h4" color="textPrimary">
+            <FormattedMessage id="who_am_i_blurb"/>
+          </Typography>
+        </TabPanel>
+        <TabPanel value={value} index="two">
+          <Typography variant="h4" color="textPrimary">
+            <FormattedMessage id="what_do_i_do_blurb"/>
+          </Typography>
+        </TabPanel>
+        <TabPanel value={value} index="three">
+          <Typography variant="h4" color="textPrimary">
+            <FormattedMessage id="what_do_i_do_fun_blurb"/>
+          </Typography>
+        </TabPanel>
+      </Layout>
+  );
 }

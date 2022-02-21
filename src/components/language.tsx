@@ -1,8 +1,7 @@
 import React from "react"
 import { IntlContextConsumer, changeLocale } from "gatsby-plugin-react-intl"
 import ReactCountryFlag from "react-country-flag"
-import Select from "@material-ui/core/Select"
-import MenuItem from "@material-ui/core/MenuItem"
+import {MenuItem, Select, SelectChangeEvent} from "@mui/material";
 
 const languageName = {
   en: "us",
@@ -14,7 +13,7 @@ languageName["zh-tw"] = "tw"
 languageName["zh-cn"] = "cn"
 
 
-function handleChange(event: React.ChangeEvent<{ name?: string; value: unknown }>) {
+function handleChange(event: SelectChangeEvent) {
   changeLocale(event.target.value);
 }
 

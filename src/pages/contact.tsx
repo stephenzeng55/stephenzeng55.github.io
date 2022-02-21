@@ -1,12 +1,11 @@
 import React from "react"
-import Typography from "@material-ui/core/Typography"
 
 import Layout from "../components/layout"
 import * as pageStyles from "./page.module.scss"
-import Email from "@material-ui/icons/Email"
-import Button from "@material-ui/core/Button"
-import SvgIcon from "@material-ui/core/SvgIcon"
+
 import { FormattedMessage } from "gatsby-plugin-react-intl"
+import {Button, SvgIcon, Typography} from "@mui/material";
+import {Email} from "@mui/icons-material";
 
 export default () => (
   <Layout>
