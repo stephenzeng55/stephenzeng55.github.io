@@ -7,7 +7,7 @@ import theme from "../theme"
 import { Link, FormattedMessage, injectIntl } from "gatsby-plugin-react-intl"
 import Language from "./language"
 import {AppBar, Button, IconButton, Toolbar} from "@mui/material";
-import {ThemeProvider} from "@mui/styles";
+import {ThemeProvider} from "@mui/material/styles";
 
 const NavLink = props => (
   <Button color="inherit" size="medium">
