@@ -1,0 +1,55 @@
+---
+import type { Locale, PortfolioContent } from "../i18n/portfolio";
+
+type Props = Pick<PortfolioContent, "projects" | "work"> & {
+  locale: Locale;
+};
+
+const { locale, projects, work } = Astro.props;
+const workTitleLines: Record<Locale, string[]> = {
+  en: ["Software work", "across foundations,", "consulting, and technology."],
+  yue: ["跨基金會、", "顧問公司同", "科技領域嘅", "軟件工作。"],
+  ja: ["財団、", "コンサルティング、", "テクノロジー領域での", "ソフトウェア開発。"],
+};
+---
+
+<section class="section" id="work" aria-labelledby="work-title">
+  <div class="section__header">
+    <p class="eyebrow">{work.eyebrow}</p>
+    <h2 id="work-title" class="work-title" aria-label={work.title}>
+      {
+        workTitleLines[locale].map((line) => (
+          <span class="work-title__line" aria-hidden="true">
+            {line}
+          </span>
+        ))
+      }
+    </h2>
+  </div>
+  <div class="project-grid">
+    {
+      projects.map((project) => (
+        <article class="project-card">
+          <p>{project.type}</p>
+          <h3>{project.name}</h3>
+          <div class="project-facts">
+            <span>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 3v3m10-3v3M4.5 9.5h15M6 5h12a2 2 0 0 1 2 2v12H4V7a2 2 0 0 1 2-2Z" />
+              </svg>
+              {project.period}
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 21s7-6.1 7-12A7 7 0 1 0 5 9c0 5.9 7 12 7 12Z" />
+                <circle cx="12" cy="9" r="2.25" />
+              </svg>
+              {project.location}
+            </span>
+          </div>
+          <span class="project-card__description">{project.description}</span>
+        </article>
+      ))
+    }
+  </div>
+</section>

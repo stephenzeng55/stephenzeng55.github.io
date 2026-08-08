@@ -1,0 +1,49 @@
+---
+import type { Locale, PortfolioContent } from "../i18n/portfolio";
+
+type Props = Pick<
+  PortfolioContent,
+  "about" | "credentials" | "skills" | "skillsLabel"
+> & {
+  locale: Locale;
+};
+
+const { about, credentials, locale, skills, skillsLabel } = Astro.props;
+const aboutTitleLines: Record<Locale, string[]> = {
+  en: [
+    "I bring software architecture,",
+    "product delivery,",
+    "and cloud experience together.",
+  ],
+  yue: ["我將軟件架構、", "產品交付同", "雲端經驗", "結合起嚟。"],
+  ja: [
+    "ソフトウェア",
+    "アーキテクチャ、",
+    "プロダクトデリバリー、",
+    "クラウド経験を",
+    "組み合わせています。",
+  ],
+};
+---
+
+<section class="section about" id="about" aria-labelledby="about-title">
+  <div class="about__copy">
+    <p class="eyebrow">{about.eyebrow}</p>
+    <h2 id="about-title" class="about-title" aria-label={about.title}>
+      {
+        aboutTitleLines[locale].map((line) => (
+          <span class="about-title__line" aria-hidden="true">
+            {line}
+          </span>
+        ))
+      }
+    </h2>
+    <p>{about.body}</p>
+    <ul class="credential-list" aria-label={about.credentialsLabel}>
+      {credentials.map((credential) => <li>{credential}</li>)}
+    </ul>
+  </div>
+  <div class="skill-panel" aria-label={skillsLabel}>
+    {skills.map((skill) => <span>{skill}</span>)}
+  </div>
+</section>

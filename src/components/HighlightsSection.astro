@@ -1,0 +1,18 @@
+---
+import type { PortfolioContent } from "../i18n/portfolio";
+
+type Props = Pick<PortfolioContent, "highlights" | "highlightsLabel">;
+
+const { highlights, highlightsLabel } = Astro.props;
+---
+
+<section class="section intro-strip" aria-label={highlightsLabel}>
+  {
+    highlights.map((highlight) => (
+      <div>
+        <strong>{highlight.title}</strong>
+        <span>{highlight.description}</span>
+      </div>
+    ))
+  }
+</section>

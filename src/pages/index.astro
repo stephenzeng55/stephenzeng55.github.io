@@ -1,0 +1,13 @@
+---
+import HomePage from "../components/HomePage.astro";
+import { portfolioContent } from "../i18n/portfolio";
+import Layout from "../layouts/Layout.astro";
+
+const locale = "en";
+const content = portfolioContent[locale];
+---
+
+<Layout lang={content.lang} title={content.title} description={content.description}>
+  <HomePage content={content} locale={locale} />
+</Layout>
+
