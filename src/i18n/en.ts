@@ -49,7 +49,7 @@ export const en: PortfolioContent = {
       type: "Senior .NET Software Developer",
       description:
         "Building software for a mission-driven foundation, with senior-level experience across .NET, cloud development, and modern web applications.",
-      period: "September 2019 - Present",
+      period: "September 2019 - August 2026",
       location: "Austin, TX",
     },
     {

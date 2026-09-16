@@ -47,7 +47,7 @@ export const yue: PortfolioContent = {
       type: "資深 .NET 軟件開發人員",
       description:
         "為使命導向基金會建構軟件，具備 .NET、雲端開發同現代網頁應用程式嘅資深經驗。",
-      period: "2019 年 9 月至今",
+      period: "2019 年 9 月至 2026 年 8 月",
       location: "柯士甸, 德州",
     },
     {

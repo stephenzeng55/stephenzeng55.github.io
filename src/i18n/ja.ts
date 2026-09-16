@@ -49,7 +49,7 @@ export const ja: PortfolioContent = {
       type: "シニア .NET ソフトウェア開発者",
       description:
         "ミッションドリブンな財団でソフトウェアを構築し、.NET、クラウド開発、モダン Web アプリケーションにおけるシニアレベルの経験を積んできました。",
-      period: "2019年9月 - 現在",
+      period: "2019年9月 - 2026年8月",
       location: "オースティン, テキサス州",
     },
     {
